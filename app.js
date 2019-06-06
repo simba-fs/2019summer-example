@@ -18,7 +18,7 @@ simple.echo('ping', 'ping');
 simple.on('vote', function(msg, arg){
 	console.log(prom('> ') + user(msg.author.tag) + prom(' create a vote'));
 	const embed = new RichEmbed()
-		.setColor('yellow')
+		.setColor('0xffff00')
 		.setTitle('VOTE')
 		.setFooter('create by ' + msg.author.tag)
 		.setDescription(arg[1]);
