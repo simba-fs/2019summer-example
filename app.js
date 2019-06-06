@@ -32,7 +32,11 @@ simple.on('vote', function(msg, arg){
 });
 
 
-simple.echo('help',
-`這是 <良成楓景遇見你> Discord bot 課程的範例
-用命令 e/vote <訊息> 建立投票`
-);
+simple.on('help', (msg) => {
+	const embed = new RichEmbed()
+		.setColor('0x00ff00')
+		.setTitle('HELP')
+		.setDescription('這是 <良成楓景遇見你> Discord bot 課程的範例 \n用命令 e/vote <訊息> 建立投票')
+		.setFooter('help page')
+	msg.channel.send(embed);
+});
