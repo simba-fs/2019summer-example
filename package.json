@@ -1,0 +1,26 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://simba-fs@github.com/simba-fs/2019summer-example.git"
+  },
+  "author": "simba.fs@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simba-fs/2019summer-example/issues"
+  },
+  "homepage": "https://github.com/simba-fs/2019summer-example#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "simple": "github:simba-fs/simple"
+  }
+}
