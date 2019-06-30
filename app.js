@@ -1,6 +1,7 @@
+require('dotenv').config();
 const simple = require('simple');
 const chalk = require('chalk');
-const {token} = require('./token.js');
+const token = process.env.TOKEN;
 const {RichEmbed} = require('discord.js');
 
 //setup chalk
