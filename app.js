@@ -45,11 +45,16 @@ simple.on('vote', function(msg, arg){
 		.setFooter('created by ' + msg.author.tag + ', id = ' + id)
 		.setDescription(question);
 	var vote = msg.channel.send(embed);
-	vote.then((msg) => {
+	vote.
+		then((msg) => {
 			msg.react('\u2705');
+			return msg;
+		}).
+		then((msg) => {	
 			msg.react('\u274E');
-		})
-		.catch(console.error);
+			return msg;
+		}).
+		catch(console.error);
 	var that = {
 		vote: vote,
 	id: id
