@@ -1,5 +1,5 @@
 require('dotenv').config();
-const simple = require('simple');
+const simply = require('simply.js');
 const chalk = require('chalk');
 const token = process.env.TOKEN;
 const {RichEmbed} = require('discord.js');
@@ -24,15 +24,15 @@ function idGen(len=10){
 }
 
 
-simple.set('promptChar', 'e/');
+simply.set('prefix', 'e/');
 
 
-simple.set('activity', 'e/help')
-//simple.client.on('ready', ()=>{simple.client.user.setActivity('e/help')})
+simply.set('activity', 'e/help')
+//simply.client.on('ready', ()=>{simply.client.user.setActivity('e/help')})
 
-simple.echo('ping', 'ping');
+simply.echo('ping', 'ping');
 
-simple.on('vote', function(msg, arg){
+simply.cmd('vote', function(msg, arg){
 	var question = '';
 	for(var i = 1; i < arg.length; i++){
 		question += arg[i] + ' ';
@@ -62,7 +62,7 @@ simple.on('vote', function(msg, arg){
 	votes.push(that); 
 });
 
-simple.on('end', function(msg, arg){
+simply.cmd('end', function(msg, arg){
 	var vote;
 	if(!arg[1]){
 		vote = votes.pop().vote;
@@ -90,7 +90,7 @@ simple.on('end', function(msg, arg){
 	})
 });
 
-simple.on('help', (msg) => {
+simply.cmd('help', (msg) => {
 	const embed = new RichEmbed()
 		.setColor('0x00ff00')
 		.setTitle('HELP')
@@ -99,4 +99,4 @@ simple.on('help', (msg) => {
 	msg.channel.send(embed);
 });
 
-simple.login(token);
+simply.login(token);
